@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="PartnerDetailsEdit" t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension" owl="1">
+        <xpath expr="//select[@name='country_id']/.." position="after">
+            <div class="partner-detail">
+                <span class="label">CID</span>
+                <input class="detail" name="cid" readonly="readonly" t-att-value="props.partner.cid"/>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="PartnerLine" t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[@class='edit-partner-button']" position="after">
+            <span t-if="props.partner.cid !== false" class="partner-cid">
+                <t t-esc="props.partner.cid"/>
+            </span>
+        </xpath>
+    </t>
+
+</templates>
