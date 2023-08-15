@@ -20,6 +20,7 @@
         'point_of_sale.assets': [
             'pos_owl_examples/static/src/css/*.css',
             'pos_owl_examples/static/src/xml/*.xml',
+            'pos_owl_examples/static/src/js/*.js',
         ],
     },
     'installable': True,
