@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'OWL POS',
-    'version': '1.0',
+    'version': '1.1',
     'summary': 'OWL Examples',
     'category': 'POS',
     'author': 'odooexperto',

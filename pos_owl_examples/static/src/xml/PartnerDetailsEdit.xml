@@ -5,7 +5,7 @@
         <xpath expr="//select[@name='country_id']/.." position="after">
             <div class="partner-detail">
                 <span class="label">CID</span>
-                <input class="detail" name="cid" readonly="readonly" t-att-value="props.partner.cid"/>
+                <input class="detail" name="cid" t-model="changes.cid"/>
             </div>
         </xpath>
     </t>
