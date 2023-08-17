@@ -2,9 +2,6 @@
 
 import Registries from "point_of_sale.Registries"
 import ProductScreen from "point_of_sale.ProductScreen"
-import PartnerDetailsEdit from "point_of_sale.PartnerDetailsEdit"
-
-const {useState} = owl;
 
 console.log("OWL examples js loaded ok... ---> ")
 const CustomProductScreen =
@@ -12,6 +9,7 @@ const CustomProductScreen =
         setup() {
             super.setup()
         }
+
         async _clickProduct(event) {
             await super._clickProduct(...arguments)
             const product_id = await this.rpc({
@@ -30,17 +28,3 @@ const CustomProductScreen =
     }
 
 Registries.Component.extend(ProductScreen, CustomProductScreen)
-
-//todo: separar en componentes independientes para respetar standard
-const CustomPartnerDetailsEdit =
-    (PartnerDetailsEdit) => class extends PartnerDetailsEdit {
-        setup() {
-            super.setup()
-            const partner = this.props.partner;
-            this.changes = useState({
-                ...this.changes,
-                cid: partner.cid || "",
-            })
-        }
-    }
-Registries.Component.extend(PartnerDetailsEdit, CustomPartnerDetailsEdit)
